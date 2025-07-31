@@ -1,0 +1,5 @@
+file_url.xlsx
+.DS_Store
+static/
+__pycache__/
+old/

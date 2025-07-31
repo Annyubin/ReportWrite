@@ -1,0 +1,53 @@
+{
+  "llm": {
+    "model": "mistral",
+    "temperature": 0.1,
+    "num_predict": 3000,
+    "top_k": 3,
+    "top_p": 0.9,
+    "timeout": 900,
+    "base_url": "http://localhost:11434/api"
+  },
+  "embedding": {
+    "model_name": "sentence-transformers/all-MiniLM-L6-v2",
+    "chunk_size": 1000,
+    "chunk_overlap": 200,
+    "max_chars": 15000
+  },
+  "search": {
+    "default_top_k": 5,
+    "max_doc_chars": 3500,
+    "similarity_threshold": 0.7
+  },
+  "paths": {
+    "docs_dir": "./docs/embedding/",
+    "index_path": "./faiss_index",
+    "logs_dir": "./logs/",
+    "feedback_log": "./feedback_log.txt"
+  },
+  "output": {
+    "min_lengths": {
+      "abstract": 300,
+      "introduction": 300,
+      "background": 300,
+      "main_content": 300,
+      "conclusion": 300
+    },
+    "enable_streaming": true,
+    "enable_highlighting": true
+  },
+  "logging": {
+    "level": "INFO",
+    "format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+    "file": "./logs/system.log",
+    "max_size": "10MB",
+    "backup_count": 5
+  },
+  "parallel": {
+    "enabled": true,
+    "max_workers": 4,
+    "batch_size": 10,
+    "show_progress": true,
+    "description": "처리 중"
+  }
+} 
